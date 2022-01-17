@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +8,8 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/idToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -30,29 +32,42 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVCategories"
+        app:layout_constraintTop_toBottomOf="@id/idToolbar"
+        android:id="@+id/id_Categories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idToolbar"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/categories" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVNews"
+        app:layout_constraintTop_toBottomOf="@id/id_Categories"
+        app:layout_constraintBottom_toTopOf="@id/login_button"
+        android:id="@+id/id_News"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/idRVCategories"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/news" />
 
     <ProgressBar
-        android:id="@+id/idPBLoading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/id_Loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:visibility="gone" />
 
-</RelativeLayout>
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:id="@+id/login_button"
+        android:text="Login"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
