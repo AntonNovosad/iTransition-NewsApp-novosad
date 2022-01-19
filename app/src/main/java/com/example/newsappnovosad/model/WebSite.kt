@@ -1,7 +1,7 @@
 package com.example.newsappnovosad.model
 
-class WebSite {
-    var status:String?=null
-    var totalResult:String?=null
-    var articles:List<Article>?=null
-}
+data class WebSite(
+    val status: String?,
+    val totalResult: String?,
+    val articles: List<Article>?
+)
