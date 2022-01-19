@@ -7,21 +7,22 @@
     app:cardBackgroundColor="@color/gray"
     app:cardCornerRadius="4dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/id_IVNews"
+            android:id="@+id/news_id_IVNews"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop" />
 
         <TextView
-            android:id="@+id/id_TVNewsHeading"
+            android:id="@+id/news_id_TVNewsHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/news_id_IVNews"
             android:layout_margin="3dp"
             android:maxLines="2"
             android:padding="3dp"
@@ -31,15 +32,16 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/idSubTitle"
+            android:id="@+id/news_idSubTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/news_id_TVNewsHeading"
             android:layout_margin="3dp"
             android:maxLines="3"
             android:padding="3dp"
             android:text="Sub Heading"
             android:textColor="@color/white" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

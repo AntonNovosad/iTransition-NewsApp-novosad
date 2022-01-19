@@ -2,17 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black_shade_1"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/idToolbar"
+        android:id="@+id/main_idToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,42 +33,42 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toBottomOf="@id/idToolbar"
-        android:id="@+id/id_Categories"
+        android:id="@+id/main_id_Categories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/main_idToolbar"
         tools:listitem="@layout/categories" />
 
     <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toBottomOf="@id/id_Categories"
-        app:layout_constraintBottom_toTopOf="@id/login_button"
-        android:id="@+id/id_News"
+        android:id="@+id/main_id_News"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/login_button"
+        app:layout_constraintTop_toBottomOf="@id/main_id_Categories"
         tools:listitem="@layout/news" />
 
     <ProgressBar
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/id_Loading"
+        android:id="@+id/main_id_Loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
         android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Login"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
